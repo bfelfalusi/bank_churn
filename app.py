@@ -3,8 +3,9 @@ import pickle
 
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
-credit_score = st.slider("credit_score",0,850)
-gender = st.radio("What is the gender?",("Male","Female"))
+credit_score = st.slider("Credit Score",350,850)
+gender = st.radio("Gender",("Male","Female"))
+age = st.number_input("Age")
 if gender == 'Male':
     genderb = 1
 else:
