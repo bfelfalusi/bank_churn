@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-with open('C:\\Users\\Bence\\Desktop\\best_vclf_model.pkl', 'rb') as file:
+with open('best_vclf_model.pkl', 'rb') as file:
     loaded_model = pickle.load(file)
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
