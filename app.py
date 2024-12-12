@@ -45,4 +45,4 @@ if predictbutton:
     lista[0].append(creditb)
     lista[0].append(activeb)
     lista[0].append(salary)
-    st.write(len(lista))
+    st.write(len(lista[0]))
