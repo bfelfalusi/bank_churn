@@ -2,13 +2,11 @@ import streamlit as st
 import pickle
 import requests
 import urllib.request
-import random
 
 
-# url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
-
-# response = requests.get(url)
-# model = pickle.loads(response.content)
+url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
+response = requests.get(url)
+model = pickle.loads(response.content)
 
 st.markdown("<h1 style='text-align: center; color: black;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
@@ -57,10 +55,4 @@ if predictbutton:
     lista[0].append(salary)
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
-    random_num = random.randint(0,1)
-    if random_num == 0:
-        st.write("Az ügyfél maradt a banknál.")
-    else:
-        st.write("Az ügyfél otthagyta a bankot.")
     
-
