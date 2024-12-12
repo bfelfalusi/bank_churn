@@ -3,7 +3,7 @@ import pickle
 import requests
 from pathlib import Path
 
-model_path = Path(__file__).parent / "models" / "model.pkl"
+model_path = Path(__file__).parent / "models" / "best_vclf_model.pkl"
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 # response = requests.get(model_url)
