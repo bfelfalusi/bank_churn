@@ -13,7 +13,8 @@ response = requests.get(model_url)
 
 with open("best_vclf_model.pkl",'wb') as file:
     file.write(response.content)
-
+with open("best_vclf_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
