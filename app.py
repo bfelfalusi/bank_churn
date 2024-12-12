@@ -54,4 +54,10 @@ if predictbutton:
     lista[0].append(salary)
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
-    st.write(random.randint(0,1))
+    random_num = random.randint(0,1)
+    if random_num == 0:
+        st.write("Az ügyfél maradt a banknál.")
+    else:
+        st.write("Az ügyfél otthagyta a bankot.")
+    
+
