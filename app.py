@@ -1,9 +1,7 @@
 import streamlit as st
 import pickle
-import requests
+import urllib.request
 import random
-
-model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 
 def load_model_from_url(url):
   """Loads a pickled model from a URL.
@@ -15,7 +13,7 @@ def load_model_from_url(url):
     The loaded model object.
   """
 
-  with requests.urlopen(url) as response:
+  with urllib.request.urlopen(url) as response:
     model_bytes = response.read()
 
   model = pickle.loads(model_bytes)
