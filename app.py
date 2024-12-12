@@ -36,6 +36,8 @@ else:
 lista = [[]]
 predictbutton = st.button("Predict")
 
+st.write("Bank churn result: ")
+
 if predictbutton:
     lista[0].append(credit_score)
     lista[0].append(genderb)
