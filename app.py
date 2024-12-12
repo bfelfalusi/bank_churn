@@ -14,7 +14,7 @@ try:
     with open(model_path, "rb") as f:
         model = pickle.load(f)
 except FileNotFoundError:
-    st.error("Model file not found. Please check the path.")
+    st.error("Model file not found. Please check the xdd.")
 except pickle.UnpicklingError:
     st.error("Error loading the model. Please check the model file.")
 
