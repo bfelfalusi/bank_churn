@@ -45,4 +45,6 @@ if predictbutton:
     lista[0].append(creditb)
     lista[0].append(activeb)
     lista[0].append(salary)
+    lista[0].append(countryb[0])
+    lista[0].append(countryb[1])
     st.write(len(lista[0]))
