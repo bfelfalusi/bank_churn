@@ -1,8 +1,15 @@
 import streamlit as st
 import pickle
+import requests
 
-with open('best_vclf_model.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
+model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
+response = requests.get(model_url)
+with open('model.pkl','wb') as f:
+    f.write(response.content)
+
+with open('model.pkl','rb') as f:
+    model = pickle.load(f)
+
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
 gender = st.radio("Gender",("Male","Female"))
