@@ -32,17 +32,17 @@ elif country.lower() == 'spain':
 else:
     countryb = (0,0)
 
-lista = []
+lista = [[]]
 predictbutton = st.button("Predict")
 
 if predictbutton:
-    lista.append(credit_score)
-    lista.append(genderb)
-    lista.append(age)
-    lista.append(tenure)
-    lista.append(balance)
-    lista.append(product_num)
-    lista.append(creditb)
-    lista.append(activeb)
-    lista.append(salary)
+    lista[0].append(credit_score)
+    lista[0].append(genderb)
+    lista[0].append(age)
+    lista[0].append(tenure)
+    lista[0].append(balance)
+    lista[0].append(product_num)
+    lista[0].append(creditb)
+    lista[0].append(activeb)
+    lista[0].append(salary)
     st.write(len(lista))
