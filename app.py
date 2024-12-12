@@ -5,12 +5,25 @@ import random
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 
-response = requests.get(model_url)
-#with open("model.pkl", "wb") as f:
-#   f.write(response.content)
+def load_model_from_url(url):
+  """Loads a pickled model from a URL.
 
-#with open("model.pkl", "rb") as f:
-model = pickle.load(response.content)
+  Args:
+    url: The URL of the pickled model.
+
+  Returns:
+    The loaded model object.
+  """
+
+  with requests.urlopen(url) as response:
+    model_bytes = response.read()
+
+  model = pickle.loads(model_bytes)
+  return model
+
+# Example usage:
+url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
+model = load_model_from_url(url)
 
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
