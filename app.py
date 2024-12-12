@@ -48,4 +48,4 @@ if predictbutton:
     lista[0].append(salary)
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
-    st.write(loaded_model.predict(lista))
+    
