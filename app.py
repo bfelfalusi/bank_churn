@@ -35,4 +35,4 @@ else:
 predictbutton = st.button("Predict")
 
 if predictbutton:
-    st.write(countryb)
+    st.write(countryb[0])
