@@ -54,5 +54,4 @@ if predictbutton:
     lista[0].append(salary)
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
-    
-st.write(random.randint(0,1))
+    st.write(random.randint(0,1))
