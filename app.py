@@ -5,10 +5,10 @@ import urllib.request
 import random
 
 
-url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
+# url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 
-response = requests.get(url)
-model = pickle.loads(response.content)
+# response = requests.get(url)
+# model = pickle.loads(response.content)
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
