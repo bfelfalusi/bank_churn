@@ -3,24 +3,14 @@ import pickle
 import requests
 from pathlib import Path
 
-model_path = Path(__file__).parent / "models" / "best_vclf_model.pkl"
-
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 response = requests.get(model_url)
-with open('best_vclf_model.pkl','wb') as f:
+with open("model.pkl", "wb") as f:
     f.write(response.content)
 
-try:
-    with open(model_path, "rb") as f:
-        model = pickle.load(f)
-except FileNotFoundError:
-    st.error("Model file not found. Please check the xdd.")
-except pickle.UnpicklingError:
-    st.error("Error loading the model. Please check the model file.")
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
 
-
-#with open('best_vclf_model.pkl','rb') as file:
-#    model = pickle.load(file)
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
