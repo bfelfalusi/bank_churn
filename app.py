@@ -4,10 +4,10 @@ import requests
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 response = requests.get(model_url)
-with open('model.pkl','wb') as f:
+with open('best_vclf_model.pkl','wb') as f:
     f.write(response.content)
 
-with open('model.pkl','rb') as f:
+with open('best_vclf_model.pkl','rb') as f:
     model = pickle.load(f)
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
