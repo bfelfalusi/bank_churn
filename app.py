@@ -11,7 +11,7 @@ response = requests.get(model_url)
 # with open("model.pkl", "rb") as f:
 #     model = pickle.load(f)
 
-model = pickle.load(open(response))
+model = pickle.load(open(response,'rb'))
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
