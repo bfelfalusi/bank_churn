@@ -1,6 +1,12 @@
 import streamlit as st
 import pickle
 import requests
+from pathlib import Path
+
+model_path = Path(__file__).parent / "models" / "model.pkl"
+
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 # response = requests.get(model_url)
@@ -8,23 +14,12 @@ model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.
 #     f.write(response.content)
 
 try:
-    response = requests.get(model_url)
-    response.raise_for_status()  # Raise an exception for error HTTP statuses
-
-    # Check response status code
-    st.write(f"Response status code: {response.status_code}")
-
-    # Check response content length
-    st.write(f"Response content length: {len(response.content)}")
-
-    # Save the model
-    with open("model.pkl", "wb") as f:
-        f.write(response.content)
-
-    st.write("Model downloaded successfully!")
-
-except requests.exceptions.RequestException as e:
-    st.error(f"Error downloading model: {e}")
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+except FileNotFoundError:
+    st.error("Model file not found. Please check the path.")
+except pickle.UnpicklingError:
+    st.error("Error loading the model. Please check the model file.")
 
 
 #with open('best_vclf_model.pkl','rb') as file:
