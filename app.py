@@ -10,7 +10,7 @@ import random
 # response = requests.get(url)
 # model = pickle.loads(response.content)
 
-st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
 gender = st.radio("Gender",("Male","Female"))
 age = st.number_input("Age",18,100)
