@@ -1,28 +1,10 @@
 import streamlit as st
 import pickle
 import requests
-from pathlib import Path
+import random
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 
-try:
-    response = requests.get(model_url)
-    response.raise_for_status()  # Raise an exception for error HTTP statuses
-
-    # Check response status code
-    st.write(f"Response status code: {response.status_code}")
-
-    # Check response content length
-    st.write(f"Response content length: {len(response.content)}")
-
-    # Save the model
-    with open("model.pkl", "wb") as f:
-        f.write(response.content)
-
-    st.write("Model downloaded successfully!")
-
-except requests.exceptions.RequestException as e:
-    st.error(f"Error downloading model: {e}")
 
 st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
 credit_score = st.slider("Credit Score",350,850)
@@ -72,3 +54,4 @@ if predictbutton:
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
     
+st.write(random.randint(0,1))
