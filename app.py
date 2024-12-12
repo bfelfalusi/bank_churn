@@ -6,9 +6,9 @@ from pathlib import Path
 model_path = Path(__file__).parent / "models" / "best_vclf_model.pkl"
 
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
-# response = requests.get(model_url)
-# with open('best_vclf_model.pkl','wb') as f:
-#     f.write(response.content)
+response = requests.get(model_url)
+with open('best_vclf_model.pkl','wb') as f:
+    f.write(response.content)
 
 try:
     with open(model_path, "rb") as f:
