@@ -5,9 +5,6 @@ from pathlib import Path
 
 model_path = Path(__file__).parent / "models" / "model.pkl"
 
-with open(model_path, "rb") as f:
-    model = pickle.load(f)
-
 model_url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
 # response = requests.get(model_url)
 # with open('best_vclf_model.pkl','wb') as f:
