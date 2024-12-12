@@ -47,5 +47,5 @@ if predictbutton:
     lista[0].append(salary)
     lista[0].append(countryb[0])
     lista[0].append(countryb[1])
-    for i in len(lista[0]):
+    for i in range(len(lista[0])):
         st.write(lista[0][i])
