@@ -24,5 +24,15 @@ if credit_card == "Yes":
     creditb = 1
 else:
     creditb = 0
+if country.lower() == 'germany':
+    countryb = (1,0)
+elif country.lower() == 'spain':
+    countryb= (0,1)
+else:
+    countryb = (0,0)
+
 
 predictbutton = st.button("Predict")
+
+if predictbutton:
+    st.write(countryb)
