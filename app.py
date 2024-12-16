@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import requests
 import urllib.request
-import random
 
 
 url = "https://github.com/bfelfalusi/bank_churn/blob/main/best_vclf_model.pkl"
