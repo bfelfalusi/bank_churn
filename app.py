@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import requests
-import urllib.request
+import sklearn
 
 loaded_model = pickle.load(open('best_vclf_model.pkl','rb'))
 
