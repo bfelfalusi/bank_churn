@@ -1,11 +1,9 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 import sklearn
-import gzip
 
-with gzip.open('test.pklz', 'rb') as ifp:
-    gzip_model = pickle.load(ifp)
+loaded_model = joblib.load('joblib_model.joblib')
 
 def main():
     st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
@@ -55,7 +53,7 @@ def main():
         features[0].append(salary)
         features[0].append(countryb[0])
         features[0].append(countryb[1])
-        prediction = gzip_model.predict(features)
+        prediction = loaded_model.predict(features)
         if prediction == 0:
             st.write("Ez az ügyfél maradt a banknál.")
         else:
