@@ -1,3 +1,4 @@
 streamlit==1.41.0
 numpy
 scikit-learn==1.5.2
+gzip
