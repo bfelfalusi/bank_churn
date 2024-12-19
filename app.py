@@ -2,8 +2,10 @@ import streamlit as st
 import pickle
 import numpy as np
 import sklearn
+import gzip
 
-loaded_model = pickle.load(open('best_vclf_model.pkl','rb'))
+with gzip.open('test.pklz', 'rb') as ifp:
+    gzip_model = pickle.load(ifp)
 
 def main():
     st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
