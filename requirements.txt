@@ -1,4 +1,4 @@
-pickle
+joblib
 sklearn
 numpy
 streamlit
