@@ -1,8 +1,6 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
-import random
 
 loaded_model = pickle.load(open('svc_model.pkl', 'rb')) 
 
