@@ -17,7 +17,27 @@ def main():
     active_member = st.radio("Are you currently customer of the bank?",("Yes","No"))
     salary = st.number_input("Estimated Salary:  0-40000: 0, 40001-80000: 1 ... 160001-200000: 4",0,4)
     country = st.selectbox("Country",("Germany","Spain","France"))
+    if gender == 'Male':
+        genderb = 1
+    else:
+        genderb = 0
+    if active_member == "Yes":
+        activeb = 1
+    else:
+        activeb = 0
+    if credit_card == "Yes":
+        creditb = 1
+    else:
+        creditb = 0
+    if country.lower() == 'germany':
+        countryb = (1,0)
+    elif country.lower() == 'spain':
+        countryb= (0,1)
+    else:
+        countryb = (0,0)
 
+    features = [[]]
+    predictbutton = st.button("Predict")
     
 
 if __name__ == '__main__':
