@@ -38,7 +38,25 @@ def main():
 
     features = [[]]
     predictbutton = st.button("Predict")
-    
+
+    st.write("Bank churn result: ")
+    if predictbutton:
+        features[0].append(credit_score)
+        features[0].append(genderb)
+        features[0].append(age)
+        features[0].append(tenure)
+        features[0].append(balance)
+        features[0].append(product_num)
+        features[0].append(creditb)
+        features[0].append(activeb)
+        features[0].append(salary)
+        features[0].append(countryb[0])
+        features[0].append(countryb[1])
+    prediction = loaded_model.predict(features)
+        if prediction == 0:
+            st.write("Ez az ügyfél maradt a banknál.")
+        else:
+            st.write("Ez az ügyfél otthagyta a bankot.") 
 
 if __name__ == '__main__':
         main()
