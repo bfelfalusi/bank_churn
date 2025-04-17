@@ -52,11 +52,11 @@ def main():
         features[0].append(salary)
         features[0].append(countryb[0])
         features[0].append(countryb[1])
-    prediction = loaded_model.predict(features)
+        prediction = loaded_model.predict(features)
         if prediction == 0:
-            st.write("Ez az ügyfél maradt a banknál.")
+            st.write("This customer stayed.")
         else:
-            st.write("Ez az ügyfél otthagyta a bankot.") 
+            st.write("This customer churned.") 
 
 if __name__ == '__main__':
         main()
