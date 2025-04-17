@@ -3,6 +3,9 @@ import joblib
 import streamlit as st
 import pandas as pd
 
+#the URL to this app is: https://bfelfalusi-bankchurn.streamlit.app/
+
+
 loaded_model = joblib.load('svc_joblib.joblib')
 
 def main():
