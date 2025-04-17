@@ -53,7 +53,7 @@ def main():
         features[0].append(countryb[0])
         features[0].append(countryb[1])
 
-        y_scores_new = loaded_model.predict_proba(X_new)[:, 1]
+        y_scores_new = loaded_model.predict_proba(features)[:, 1]
 
         prediction = (y_scores_new >= 0.36).astype(int)
         
