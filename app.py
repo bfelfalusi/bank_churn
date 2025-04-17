@@ -52,7 +52,11 @@ def main():
         features[0].append(salary)
         features[0].append(countryb[0])
         features[0].append(countryb[1])
-        prediction = loaded_model.predict(features)
+
+        y_scores_new = model.predict_proba(X_new)[:, 1]
+
+        prediction = (y_scores_new >= 0.36).astype(int)
+        
         if prediction == 0:
             st.write("This customer stayed.")
         else:
