@@ -1,8 +1,9 @@
-import streamlit as st
-import joblib
 import numpy as np
+import pickle
+import streamlit as st
+import pandas as pd
 
-loaded_model = joblib.load('svc_joblib.joblib')
+loaded_model = pickle.load(open('svc_model.pkl', 'rb')) 
 
 def main():
     st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
