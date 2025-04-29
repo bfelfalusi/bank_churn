@@ -10,6 +10,7 @@ loaded_model = joblib.load('svc_joblib.joblib')
 
 def main():
     st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: white:'>This app is based on the 'bank customer churn dataset' from kaggle</h2>")
     credit_score = st.slider("Credit Score",350,850)
     gender = st.radio("Gender",("Male","Female"))
     age = st.number_input("Age",18,100)
@@ -17,7 +18,7 @@ def main():
     balance = st.number_input("Balance:  0-50.000€: 0, 50.001€-100.000€: 1 ... 200.001€-250.000€: 4",0,4)
     product_num = st.number_input("Number of products owned",1,4)
     credit_card = st.radio("Do you have a credit card?",("Yes","No"))
-    active_member = st.radio("Are you currently customer of the bank?",("Yes","No"))
+    active_member = st.radio("Are you an active member of the bank?",("Yes","No"))
     salary = st.number_input("Estimated Salary (Yearly):  0-40.000€: 0, 40.001€-80.000€: 1 ... 160.001€-200.000€: 4",0,4)
     country = st.selectbox("Country",("Germany","Spain","France"))
     if gender == 'Male':
