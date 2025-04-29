@@ -10,7 +10,7 @@ loaded_model = joblib.load('svc_joblib.joblib')
 
 def main():
     st.markdown("<h1 style='text-align: center; color: white;'>Bank Customer Churn Prediction</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; color: white:'>This app is based on the 'bank customer churn dataset' from kaggle</h2>")
+    st.markdown("<h2 style='text-align: center; color: white:'>This app is based on the 'bank customer churn dataset' from kaggle</h2>", unsafe_allow_html=True)
     credit_score = st.slider("Credit Score",350,850)
     gender = st.radio("Gender",("Male","Female"))
     age = st.number_input("Age",18,100)
