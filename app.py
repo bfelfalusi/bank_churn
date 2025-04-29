@@ -18,7 +18,7 @@ def main():
     product_num = st.number_input("Number of products owned",1,4)
     credit_card = st.radio("Do you have a credit card?",("Yes","No"))
     active_member = st.radio("Are you currently customer of the bank?",("Yes","No"))
-    salary = st.number_input("Estimated Salary:  0-40000: 0, 40001-80000: 1 ... 160001-200000: 4",0,4)
+    salary = st.number_input("Estimated Salary:  0-40000€: 0, 40001€-80000€: 1 ... 160001€-200000€: 4",0,4)
     country = st.selectbox("Country",("Germany","Spain","France"))
     if gender == 'Male':
         genderb = 1
