@@ -3,7 +3,7 @@ import joblib
 import streamlit as st
 import pandas as pd
 
-#the URL to this app is: https://bfelfalusi-bankchurn.streamlit.app/
+#the URL to this app: https://bfelfalusi-bankchurn.streamlit.app/
 
 
 loaded_model = joblib.load('svc_joblib.joblib')
@@ -14,7 +14,7 @@ def main():
     gender = st.radio("Gender",("Male","Female"))
     age = st.number_input("Age",18,100)
     tenure = st.number_input("Tenure",0,10)
-    balance = st.number_input("Balance:  0-50000: 0, 50001-100000: 1 ... 200001-250000: 4",0,4)
+    balance = st.number_input("Balance:  0-50000€: 0, 50001€-100000€: 1 ... 200001€-250000€: 4",0,4)
     product_num = st.number_input("Number of products owned",1,4)
     credit_card = st.radio("Do you have a credit card?",("Yes","No"))
     active_member = st.radio("Are you currently customer of the bank?",("Yes","No"))
